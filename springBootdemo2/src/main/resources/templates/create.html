@@ -1,8 +1,7 @@
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
- <head>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
     <meta charset="UTF-8">
     <title>Create new User</title>
 </head>
@@ -10,6 +9,13 @@
 <h1>Create new User</h1>
 <form th:method="POST" th:action="@{/new}" th:object="${user}">
     <table>
+        <tr>
+            <td>
+                <label for="id">Enter id</label>
+                <input type="number" th:field="*{id}" id="id" required/>
+                <div th:if="${#fields.hasErrors('id')}" th:errors="*{id}">id error</div>
+            </td>
+        </tr>
         <tr>
             <td>
                 <label for="name">Enter name</label>

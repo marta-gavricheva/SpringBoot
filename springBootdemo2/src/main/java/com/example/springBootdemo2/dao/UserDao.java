@@ -1,10 +1,11 @@
-package com.example.springBootdemo2.service;
+package com.example.springBootdemo2.dao;
 
 import com.example.springBootdemo2.model.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserDao {
+
     List<User> getAllUsers();
 
     void addUser(User user);
@@ -14,5 +15,4 @@ public interface UserService {
     User getUserId(long id);
 
     User removeUser(long id);
-
 }
